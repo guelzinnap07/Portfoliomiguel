@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miguel Souza - Desenvolvedor Web</title>
+  <title>Miguel Souza | Dev</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
     :root {
-      --bg-dark: #0a0b10;
-      --bg-card: #121520;
-      --border-color: #202638;
+      --bg-dark: #07090e;
+      --bg-card: #0d111a;
+      --bg-card-hover: #131926;
+      --border-color: #1a2234;
       --primary: #00f2fe;
       --secondary: #4facfe;
-      --text-main: #f1f5f9;
-      --text-muted: #94a3b8;
       --accent: #8b5cf6;
+      --whatsapp-color: #00d68f;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     body {
@@ -35,358 +37,618 @@
       overflow-x: hidden;
     }
 
+    /* Header */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(10, 11, 16, 0.8);
-      backdrop-filter: blur(12px);
+      background: rgba(7, 9, 14, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-color);
       z-index: 1000;
-      padding: 1.2rem 2rem;
+      padding: 1.2rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .logo {
-      font-family: 'Fira Code', monospace;
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--primary);
-    }
-
-    nav ul {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #fff;
       display: flex;
-      list-style: none;
-      gap: 2rem;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    nav a {
+    .logo-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .logo span {
       color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
+      font-weight: 400;
     }
 
-    nav a:hover {
-      color: var(--primary);
+    .menu-icon {
+      color: var(--text-main);
+      font-size: 1.2rem;
+      cursor: pointer;
     }
 
+    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8rem 2rem 4rem 2rem;
-      background: radial-gradient(circle at 50% 30%, rgba(0, 242, 254, 0.08) 0%, rgba(10, 11, 16, 1) 70%);
+      padding: 7rem 1.5rem 4rem 1.5rem;
       text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(0, 242, 254, 0.05) 0%, rgba(7, 9, 14, 0) 70%);
     }
 
     .hero-content {
-      max-width: 800px;
-    }
-
-    .profile-img-container {
-      width: 150px;
-      height: 150px;
-      margin: 0 auto 2rem auto;
-      border-radius: 50%;
-      padding: 4px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      box-shadow: 0 0 25px rgba(0, 242, 254, 0.3);
-    }
-
-    .profile-img {
+      max-width: 750px;
       width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      background-color: var(--bg-card);
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      background: linear-gradient(to right, #ffffff, var(--primary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(13, 17, 26, 0.8);
+      border: 1px solid var(--border-color);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
       color: var(--text-muted);
       margin-bottom: 2rem;
     }
 
-    .cta-btn {
-      display: inline-flex;
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span.cyan {
+      color: var(--primary);
+    }
+
+    .hero h1 span.gradient {
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .btn-primary-gradient {
+      display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #000;
-      padding: 0.8rem 1.8rem;
-      border-radius: 30px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      color: #fff;
+      padding: 0.9rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 20px rgba(0, 114, 255, 0.25);
+    }
+
+    .btn-outline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(13, 17, 26, 0.6);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.9rem 1.5rem;
+      border-radius: 12px;
       font-weight: 600;
       text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-size: 0.95rem;
     }
 
-    .cta-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3);
+    /* Avatar Ring */
+    .avatar-section {
+      margin-top: 3.5rem;
+      display: flex;
+      justify-content: center;
     }
 
+    .avatar-glow-ring {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      position: relative;
+      box-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #090d16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .avatar-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .avatar-text {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* Sections General */
     section {
-      padding: 5rem 2rem;
-      max-width: 1100px;
+      padding: 4rem 1.5rem;
+      max-width: 900px;
       margin: 0 auto;
     }
 
     .section-title {
-      font-size: 2rem;
-      margin-bottom: 3rem;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 1.8rem;
+      letter-spacing: -0.01em;
+    }
+
+    /* Sobre Mim */
+    .about-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .about-text p {
+      margin-bottom: 1.2rem;
+    }
+
+    .about-text strong {
+      color: var(--text-main);
+    }
+
+    /* Habilidades Grid */
+    .section-header-center {
       text-align: center;
-      position: relative;
+      margin-bottom: 2.5rem;
     }
 
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: var(--primary);
-      margin: 0.5rem auto 0 auto;
-      border-radius: 2px;
+    .section-header-center h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
     }
 
-    .projects-grid {
+    .section-header-center p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
 
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .skill-icon {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .skill-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .skill-sub {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    /* Projetos */
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary);
-    }
-
-    .project-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .project-info {
+      border-radius: 16px;
       padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-header-badge {
+      display: inline-block;
+      background: rgba(0, 242, 254, 0.1);
+      color: var(--primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .project-preview-box {
+      background: linear-gradient(180deg, #121927 0%, #0d121c 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-preview-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-preview-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-preview-sub {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-preview-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.2);
+      color: var(--primary);
+      padding: 0.4rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
     }
 
     .project-title {
       font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
     }
 
     .project-desc {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
       margin-bottom: 1.5rem;
     }
 
-    .project-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .btn-link {
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #000;
-    }
-
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    .skill-badge {
-      background: var(--bg-card);
+    .tech-tag {
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border-color);
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
+      color: var(--text-muted);
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .btn-action-full {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-    }
-
-    .skill-badge i {
-      color: var(--primary);
-      font-size: 1.2rem;
-    }
-
-    .skill-badge:hover {
-      border-color: var(--primary);
-    }
-
-    .contact-container {
-      display: flex;
       justify-content: center;
-      margin-top: 2rem;
+      gap: 0.5rem;
+      background: #00bcd4;
+      color: #000;
+      padding: 0.85rem;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
 
-    .contact-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 2.5rem;
-      border-radius: 12px;
+    /* Contato Section */
+    .contact-section {
       text-align: center;
-      max-width: 450px;
-      width: 100%;
-      transition: border-color 0.3s ease;
+      padding-top: 2rem;
     }
 
-    .contact-card:hover {
-      border-color: #25D366;
-    }
-
-    .contact-card i {
-      font-size: 3rem;
-      color: #25D366;
-      margin-bottom: 1rem;
-    }
-
-    .contact-card h3 {
-      font-size: 1.3rem;
+    .contact-subtitle {
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       margin-bottom: 0.5rem;
     }
 
-    .contact-card p {
+    .contact-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .contact-desc {
       color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .whatsapp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      max-width: 420px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .whatsapp-icon-wrapper {
+      width: 55px;
+      height: 55px;
+      background: rgba(0, 214, 143, 0.1);
+      color: var(--whatsapp-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 1rem auto;
+    }
+
+    .whatsapp-card h3 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .whatsapp-card p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn-whatsapp-green {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--whatsapp-color);
+      color: #051a11;
+      padding: 0.75rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 1.5rem 2rem 1.5rem;
       color: var(--text-muted);
+      font-size: 0.8rem;
       border-top: 1px solid var(--border-color);
-      font-size: 0.9rem;
+      margin-top: 3rem;
     }
 
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      nav ul { display: none; }
+    @media (min-width: 600px) {
+      .hero h1 { font-size: 3rem; }
+      .hero-buttons { flex-direction: row; }
+      .skills-grid { grid-template-columns: repeat(3, 1fr); }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">&lt;MiguelSouza /&gt;</div>
-    <nav>
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+    <div class="logo">
+      <div class="logo-dot"></div>
+      Miguel Souza <span>| Dev</span>
+    </div>
+    <div class="menu-icon"><i class="fas fa-bars"></i></div>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="profile-img-container">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Miguel Souza" class="profile-img" id="foto-perfil">
-      </div>
-      <h1>Miguel Souza</h1>
-      <p>Desenvolvedor Web Front-end especializado em criar sites modernos, responsivos e de alta performance.</p>
-      <a href="https://wa.me/5513998031403?text=Ol%C3%A1%20Miguel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." class="cta-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
-      </a>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="status-badge">
+          <div class="status-dot"></div>
+          Disponível para novos projetos
+        </div>
 
-  <section id="sobre">
-    <h2 class="section-title">Sobre Mim</h2>
-    <div style="background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); text-align: center;">
-      <p style="color: var(--text-muted); font-size: 1.05rem;">
-        Sou apaixonado por tecnologia e criação de soluções digitais. Desenvolvo landing pages e sites institucionais completos, focados em design atraente, boa experiência do usuário e entrega de resultados reais para clientes e negócios.
-      </p>
-    </div>
-  </section>
+        <h1>
+          Transformo ideias em sites <span class="cyan">modernos</span>, <span class="gradient">elegantes</span> e de alta performance.
+        </h1>
 
-  <section id="projetos">
-    <h2 class="section-title">Projetos Em Destaque</h2>
-    <div class="projects-grid">
-      
-      <!-- Projeto Dra. Camila Caldas -->
-      <div class="project-card">
-        <img src="https://api.microlink.io?url=https%3A%2F%2Fdracamilacaldas-six.vercel.app&screenshot=true&meta=false&embed=screenshot.url" alt="Dra. Camila Caldas Website" class="project-img">
-        <div class="project-info">
-          <h3 class="project-title">Dra. Camila Caldas - Odontologia</h3>
-          <p class="project-desc">Site institucional desenvolvido para clínica odontológica, apresentando tratamentos, estrutura e canal direto para agendamento de consultas via WhatsApp.</p>
-          <div class="project-links">
-            <a href="https://dracamilacaldas-six.vercel.app" class="btn-link btn-primary" target="_blank">
-              <i class="fas fa-external-link-alt"></i> Ver Site Ao Vivo
-            </a>
+        <p class="hero-desc">
+          Especializado na criação de landing pages e aplicações web responsivas. Desenvolvimento do zero com publicação rápida e ágil no GitHub e Vercel.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projetos" class="btn-primary-gradient">Ver Meus Projetos &darr;</a>
+          <a href="#contato" class="btn-outline">Entrar em Contato <i class="fas fa-paper-plane" style="font-size:0.8rem;"></i></a>
+        </div>
+
+        <div class="avatar-section">
+          <div class="avatar-glow-ring">
+            <div class="avatar-inner">
+              <span class="avatar-text">Miguel</span>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section id="sobre">
+      <h2 class="section-title">Sobre Mim</h2>
+      <div class="about-text">
+        <p>Olá! Sou o <strong>Miguel Souza</strong>, desenvolvedor web focado na criação de sites modernos, performáticos e de alto impacto visual.</p>
+        <p>Meu foco principal está no desenvolvimento de <strong>Landing Pages de alta conversão</strong>, sites institucionais e páginas responsivas. Cuido de cada detalhe, desde o design e a otimização mobile até o deploy final para garantir que o site do cliente fique impecável e pronto para gerar resultados.</p>
+      </div>
+    </section>
 
-  <section id="habilidades">
-    <h2 class="section-title">Habilidades & Tecnologias</h2>
-    <div class="skills-container">
-      <div class="skill-badge"><i class="fab fa-html5"></i> HTML5</div>
-      <div class="skill-badge"><i class="fab fa-css3-alt"></i> CSS3</div>
-      <div class="skill-badge"><i class="fab fa-js"></i> JavaScript</div>
-      <div class="skill-badge"><i class="fab fa-git-alt"></i> Git</div>
-      <div class="skill-badge"><i class="fab fa-github"></i> GitHub</div>
-      <div class="skill-badge"><i class="fas fa-server"></i> Vercel</div>
-    </div>
-  </section>
+    <section id="habilidades">
+      <div class="section-header-center">
+        <h2>Minhas Habilidades</h2>
+        <p>Tecnologias e ferramentas que utilizo para dar vida aos projetos.</p>
+      </div>
 
-  <section id="contato">
-    <h2 class="section-title">Entre em Contato</h2>
-    <div class="contact-container">
-      <div class="contact-card">
-        <i class="fab fa-whatsapp"></i>
-        <h3>WhatsApp</h3>
-        <p>(13) 99803-1403</p>
-        <a href="https://wa.me/5513998031403?text=Ol%C3%A1%20Miguel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." class="cta-btn" target="_blank">
-          Iniciar Conversa
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #e34f26;"><i class="fab fa-html5"></i></div>
+          <div class="skill-title">HTML5</div>
+          <div class="skill-sub">Estrutura Semântica</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #1572b6;"><i class="fab fa-css3-alt"></i></div>
+          <div class="skill-title">CSS3 & Tailwind</div>
+          <div class="skill-sub">Estilização & Layouts</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #f7df1e;"><i class="fab fa-js"></i></div>
+          <div class="skill-title">JavaScript (ES6+)</div>
+          <div class="skill-sub">Interatividade & Dinamismo</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #a855f7;"><i class="fab fa-github"></i></div>
+          <div class="skill-title">Git & GitHub</div>
+          <div class="skill-sub">Controle de Versão</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #fff;"><i class="fas fa-server"></i></div>
+          <div class="skill-title">Vercel</div>
+          <div class="skill-sub">Hospedagem & Deploy Cloud</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #10b981;"><i class="fas fa-mobile-alt"></i></div>
+          <div class="skill-title">Design Responsivo</div>
+          <div class="skill-sub">Adaptação para Telas</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h2 class="section-title">Projetos Em Destaque</h2>
+
+      <div class="project-card">
+        <div class="project-header-badge">Cliente Real • Online</div>
+
+        <div class="project-preview-box">
+          <div class="project-preview-icon"><i class="fas fa-user-md"></i></div>
+          <div class="project-preview-title">Dra. Camila Caldas</div>
+          <div class="project-preview-sub">Atendimento Médico Especializado</div>
+          <a href="https://dracamilacaldas-six.vercel.app" target="_blank" class="btn-preview-link">
+            Acessar Site no Vercel <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+        <h3 class="project-title">Dra. Camila Caldas - Landing Page Médica</h3>
+        <p class="project-desc">
+          Website institucional desenvolvido para profissional da área de saúde. Apresenta layout limpo, transmite alta credibilidade, carrega com extrema rapidez e possui integração direta com o WhatsApp para agendamento de consultas.
+        </p>
+
+        <div class="tech-tags">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3 / Tailwind</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Vercel</span>
+        </div>
+
+        <a href="https://dracamilacaldas-six.vercel.app" target="_blank" class="btn-action-full">
+          Ver Site Ao Vivo <i class="fas fa-external-link-alt"></i>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="contato" class="contact-section">
+      <div class="contact-subtitle">VAMOS CONVERSAR?</div>
+      <h2 class="contact-title">Quer um site moderno para o seu projeto ou empresa?</h2>
+      <p class="contact-desc">Estou disponível para novos projetos de criação de sites, landing pages e parcerias. Entre em contato comigo!</p>
+
+      <div class="whatsapp-card">
+        <div class="whatsapp-icon-wrapper">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <h3>Falar no WhatsApp</h3>
+        <p>(13) 99803-1403</p>
+        <a href="https://wa.me/5513998031403?text=Ol%C3%A1%20Miguel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" class="btn-whatsapp-green">
+          Enviar Mensagem <i class="fas fa-paper-plane"></i>
+        </a>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2026 Miguel Souza. Todos os direitos reservados.</p>
+    <p style="margin-top: 0.5rem; color: #64748b;">Feito com ❤️ e hospedado no Vercel</p>
   </footer>
 
 </body>
